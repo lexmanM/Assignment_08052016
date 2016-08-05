@@ -106,4 +106,4 @@ Valid_session$Session_cum <- NULL
 
 # Average session time (Valid)
 No_of_valid_sessions <- nrow(Valid_session) # 10979 - Valid sessions
-Average_session_time <- sum(Valid_session$Valid_sessions)/No_of_valid_sessions #2311 - Average session time (Valid)
+Average_session_time <- sum(Valid_session$Valid_sessions)/No_of_valid_sessions #2311 secs - Average session time (Valid)
