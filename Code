@@ -107,3 +107,11 @@ Valid_session$Session_cum <- NULL
 # Average session time (Valid)
 No_of_valid_sessions <- nrow(Valid_session) # 10979 - Valid sessions
 Average_session_time <- sum(Valid_session$Valid_sessions)/No_of_valid_sessions #2311 secs - Average session time (Valid)
+
+# Removing the highest 5% percentile from the data - looking at the distribution 
+Valid_session_95per <- Valid_session[Valid_session$Valid_sessions < quantile(Valid_session$Valid_sessions, 0.95), ]
+
+# Calculating average session time and number of valid sessions after subsetting for 95 percentile
+No_of_valid_sessions_95per <- length(Valid_session_95per) # 10430 - Valid sessions
+Average_session_time_95per <- sum(Valid_session_95per)/No_of_valid_sessions_95per #685 secs - Average session time (Valid) 
+
