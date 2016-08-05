@@ -73,8 +73,6 @@ sum(Check_no_of_start_stop_gamedevice$flag_diff) #1958 game_device has irregular
 # Finding the time interval between starts and stops and stops and starts given the game_device id is the same
 Final_data$time <- ifelse(Final_data$game_device==shift(Final_data$game_device),difftime(time1 = shift(Final_data$ts),time2 =  Final_data$ts),0)
 
-shift(start,1,type="lag")
-
 # Extract the session time information and the session info
 Final_data$session_time <- ifelse(Final_data$flag=='Start',Final_data$time,ifelse(Final_data$time<30,0,0))
 Final_data$session_add <- ifelse(Final_data$flag=='Stop',ifelse(Final_data$time>30,1,0),ifelse(Final_data$game_device==shift(Final_data$game_device),0,1))
